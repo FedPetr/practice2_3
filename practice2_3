@@ -1,0 +1,33 @@
+Задание 1:
+
+#include <iostream>
+#include <ctime>
+
+#include <windows.h>
+using namespace std;
+
+using namespace std;
+
+int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    // current date/time based on current system
+    time_t now = time(0);
+    int a;
+    int b;
+    int c;
+    cout << "Введите через enter год, месяц и день рождения: " << endl;
+    cin >> a;
+    cin >> b;
+    cin >> c;
+
+    tm * ltm = localtime(&now);
+
+    // print various components of tm structure.
+    cout << "Year: " << 1899 + ltm->tm_year - a << endl;
+    cout << "Month: "<< ltm->tm_mon + b - 2 << endl;
+    cout << "Day: "<<  ltm->tm_mday + c << endl;
+
+}
+
+Здание 2:
+
